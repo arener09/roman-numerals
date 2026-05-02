@@ -1,5 +1,6 @@
+"""Ein konkreter Test je Fall — siehe testfaelle.md (kein parametrize)."""
+
 from main import transform_to_roman
 
-
-def test():
-    pass
+def arabisch_1_wird_I() -> None:
+    assert transform_to_roman(1) == "I"
