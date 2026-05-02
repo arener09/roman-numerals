@@ -29,4 +29,6 @@ def _from_glyph_table(n: int, table: Sequence[tuple[int, str]]) -> str:
 
 def transform_to_roman(n: int) -> str:
     """Konvertiert eine arabische Zahl in römische Notation (1–3999)."""
+    if not (1 <= n <= 3999):
+        return ""
     return _from_glyph_table(n, _ROMAN_GLYPHS_DESC)
