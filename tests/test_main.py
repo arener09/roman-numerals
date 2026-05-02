@@ -7,3 +7,6 @@ def arabisch_1_wird_I() -> None:
 
 def arabisch_5_wird_V() -> None:
     assert transform_to_roman(5) == "V"
+
+def arabisch_10_wird_X() -> None:
+    assert transform_to_roman(10) == "X"
