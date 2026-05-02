@@ -19,3 +19,16 @@ from main import transform_to_roman
 )
 def test_basiswerte(arabic, roman):
     assert transform_to_roman(arabic) == roman
+
+
+@pytest.mark.parametrize(
+    "arabic,roman",
+    [
+        (2, "II"),
+        (6, "VI"),
+        (60, "LX"),
+        (600, "DC"),
+    ],
+)
+def test_wiederholung_und_addition(arabic, roman):
+    assert transform_to_roman(arabic) == roman
