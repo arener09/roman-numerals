@@ -1,4 +1,7 @@
-_ROMAN_GLYPHS_DESC = [
+from collections.abc import Sequence
+
+# Absteigend nach Wert: Greedy wählt größtmögliche Teile zuerst.
+_ROMAN_GLYPHS_DESC: tuple[tuple[int, str], ...] = (
     (1000, "M"),
     (900, "CM"),
     (500, "D"),
@@ -12,10 +15,10 @@ _ROMAN_GLYPHS_DESC = [
     (5, "V"),
     (4, "IV"),
     (1, "I"),
-]
+)
 
 
-def _from_glyph_table(n: int, table: list[tuple[int, str]]) -> str:
+def _from_glyph_table(n: int, table: Sequence[tuple[int, str]]) -> str:
     parts: list[str] = []
     for value, symbol in table:
         while n >= value:
