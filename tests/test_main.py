@@ -32,3 +32,18 @@ def test_basiswerte(arabic, roman):
 )
 def test_wiederholung_und_addition(arabic, roman):
     assert transform_to_roman(arabic) == roman
+
+
+@pytest.mark.parametrize(
+    "arabic,roman",
+    [
+        (4, "IV"),
+        (9, "IX"),
+        (40, "XL"),
+        (90, "XC"),
+        (400, "CD"),
+        (900, "CM"),
+    ],
+)
+def test_subtraktion(arabic, roman):
+    assert transform_to_roman(arabic) == roman
