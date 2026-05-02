@@ -1,5 +1,8 @@
 from collections.abc import Sequence
 
+_ROMAN_MIN = 1
+_ROMAN_MAX = 3999
+
 # Absteigend nach Wert: Greedy wählt größtmögliche Teile zuerst.
 _ROMAN_GLYPHS_DESC: tuple[tuple[int, str], ...] = (
     (1000, "M"),
@@ -29,6 +32,6 @@ def _from_glyph_table(n: int, table: Sequence[tuple[int, str]]) -> str:
 
 def transform_to_roman(n: int) -> str:
     """Konvertiert eine arabische Zahl in römische Notation (1–3999)."""
-    if not (1 <= n <= 3999):
+    if not (_ROMAN_MIN <= n <= _ROMAN_MAX):
         return ""
     return _from_glyph_table(n, _ROMAN_GLYPHS_DESC)
