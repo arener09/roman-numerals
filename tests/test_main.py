@@ -47,3 +47,21 @@ def test_wiederholung_und_addition(arabic, roman):
 )
 def test_subtraktion(arabic, roman):
     assert transform_to_roman(arabic) == roman
+
+
+@pytest.mark.parametrize(
+    "arabic,roman",
+    [
+        (42, "XLII"),
+        (99, "XCIX"),
+        (2013, "MMXIII"),
+        (3999, "MMMCMXCIX"),
+    ],
+)
+def test_zusammengesetzt(arabic, roman):
+    assert transform_to_roman(arabic) == roman
+
+
+@pytest.mark.parametrize("arabic", [0, 4000])
+def test_ausserhalb_bereich_leeres_ergebnis(arabic):
+    assert transform_to_roman(arabic) == ""
