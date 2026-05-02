@@ -12,7 +12,7 @@
 
 ## Wiederholung
 
-- [ ] 2 → MM
+- [ ] 2 → II
   
 ### Addition
 
